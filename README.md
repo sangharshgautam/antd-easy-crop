@@ -1,1 +1,0 @@
-# antd-easy-crop
