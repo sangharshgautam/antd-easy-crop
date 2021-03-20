@@ -2,11 +2,14 @@
   "name": "antd-easy-crop",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "./lib/cjs/index.js",
+  "module": "./lib/esm/index.js",
+  "types": "./lib/esm/index.d.ts",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "storybook": "start-storybook -p 6006",
-    "build-storybook": "build-storybook"
+    "build": "npm run build:esm && npm run build:cjs",
+    "build:esm": "tsc",
+    "build:cjs": "tsc --module commonjs --outDir lib/cjs",
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
     "type": "git",
@@ -19,21 +22,14 @@
   },
   "homepage": "https://github.com/sangharshgautam/antd-easy-crop#readme",
   "devDependencies": {
-    "@babel/core": "^7.13.8",
-    "@storybook/addon-actions": "^6.1.21",
-    "@storybook/addon-essentials": "^6.1.21",
-    "@storybook/addon-links": "^6.1.21",
-    "@storybook/react": "^6.1.21",
-    "babel-loader": "^8.2.2",
-    "fork-ts-checker-webpack-plugin": "^6.1.1",
+    "@types/react": "^17.0.3",
+    "@types/react-dom": "^17.0.2",
+    "react": "^17.0.1",
+    "react-dom": "^17.0.1",
     "typescript": "^4.2.3"
   },
-  "dependencies": {
-    "antd": "^4.13.1",
-    "react-easy-crop": "^3.3.1",
-    "react-image-crop": "^8.6.6",
+  "peerDependencies": {
     "react": "^17.0.1",
     "react-dom": "^17.0.1"
-  },
-  "peerDependencies": {}
+  }
 }
