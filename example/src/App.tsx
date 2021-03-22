@@ -1,23 +1,25 @@
-import React, {useState} from 'react';
+import React from 'react';
 import 'antd/dist/antd.css';
 import './App.css';
-import { DatePicker, message } from 'antd';
-import SayHello from "antd-easy-crop";
+import {Button, Upload} from "antd";
+import { UploadOutlined } from '@ant-design/icons'
+import {ZegImgCrop, ZegImgCropProps} from "antd-easy-crop";
 function App() {
-    const [date, setDate] = useState();
-    const handleChange = (value: any) => {
-        message.info(`Selected Date: ${value ? value.format('YYYY-MM-DD') : 'None'}`);
-        setDate(value);
+    const imgCropProps: ZegImgCropProps = {
+        aspect: 1,
+        shape: 'rect',
+        grid: false,
+        minZoom: 0,
+        maxZoom: 10,
+        rotate: true,
+        zoom: true
     };
-  return (
+    return (
       <div className="App">
-          <div style={{ width: 400, margin: '100px auto' }}>
-              <DatePicker onChange={handleChange} />
-              <div style={{ marginTop: 16 }}>
-                  {/*Selected Date: {date ? date.format('YYYY-MM-DD') : 'None'}*/}
-              </div>
-          </div>
-          <SayHello name="Prateek" />
+          <h1>HELLO2</h1>
+          <ZegImgCrop {...imgCropProps}>
+              <Upload><Button icon={<UploadOutlined />}>Click to Upload</Button></Upload>
+          </ZegImgCrop>
       </div>
   );
 }

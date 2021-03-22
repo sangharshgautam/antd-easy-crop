@@ -1,0 +1,15 @@
+.zeg-img-crop-modal .ant-modal-body {
+    padding-bottom: 16px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.zeg-img-crop-modal .zeg-img-crop-control {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    margin: 5px;
+}
+.zeg-img-crop-modal .zeg-img-crop-control .zeg-img-crop-control-slider{
+    flex-grow: 1;
+}
